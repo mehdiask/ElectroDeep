@@ -19,7 +19,7 @@ toggle.addEventListener("click", () => {
 
 
 document.querySelector('.home-btn').addEventListener('click', function () {
-    window.location.href = 'https://www.electrodev.com/';
+    window.location.href = 'https://www.electrodeep.com/';
   });
 
 
