@@ -1,0 +1,840 @@
+/* LIGHT THEME */
+:root {
+  /* Layout */
+  --nav-bg: #f3f4f6;          /* Light gray navbar */
+  --page-bg: #f3f4f6;         /* Page background */
+  --hero-bg: #eef0f3;         /* Hero section */
+  --card-bg: #ffffff;
+
+  /* Text */
+  --text-main: #000000;       /* Black text */
+  --text-muted: #4b5563;      /* Dark gray */
+
+  /* Accent */
+  --accent: #0ea5a4;
+
+  /* Hero elements */
+  --circle-color: #9ca3af;    /* Gray circle */
+}
+
+/* DARK THEME - EXTRA LIGHT VERSION */
+[data-theme="dark"] {
+  /* Layout - Much lighter backgrounds */
+  --nav-bg: #252a3a;          /* Very light dark blue-gray */
+  --page-bg: #1c212e;         /* Light charcoal blue */
+  --hero-bg: #212737;         /* Slightly darker than page */
+  --card-bg: #2d3448;         /* Light blue-gray cards */
+
+  /* Text */
+  --text-main: #f8fafc;       /* Very light off-white */
+  --text-muted: #a8b2d1;      /* Light blue-gray text */
+
+  /* Accent */
+  --accent: #60a5fa;          /* Bright blue accent */
+
+  /* Hero elements */
+  --circle-color: #64748b;    /* Medium gray circle */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--page-bg);
+  color: var(--text-main);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--nav-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.home-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: #020617;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
+}
+
+.services-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: #020617;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.services-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
+}
+
+.fields-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: #020617;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fields-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
+}
+
+.projects-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: #020617;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projects-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
+}
+
+.talk-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: #020617;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.talk-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
+}
+
+/* ===== HERO WITH BACKGROUND IMAGE ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 10%; /* Reduced padding for smaller header */
+  position: relative;
+  min-height: 350px; /* Smaller height */
+  overflow: hidden;
+}
+
+/* Brighter background image for hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(50, 50, 50, 0.2), rgba(50, 50, 50, 0.1)), /* Light overlay for brightness */
+    url('ectronique.jpg') no-repeat center center;
+  background-size: cover;
+  filter: brightness(1.2); /* Increase brightness */
+  z-index: 1;
+}
+
+/* Lighter overlay for better text readability */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Lighter overlay */
+  z-index: 2;
+}
+
+/* ===== HERO TEXT BACKGROUND ===== */
+.hero-text {
+  background: rgba(50, 50, 50, 0.4); /* Semi-transparent dark background */
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px); /* Optional: adds glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode adjustment for hero text background */
+[data-theme="dark"] .hero-text {
+  background: rgba(0, 0, 0, 0.8); /* Slightly darker for dark mode */
+}
+
+/* Ensure hero content stays above background */
+.hero-text,
+.hero-image {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem; /* Slightly smaller */
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+.hero-text h2 {
+  font-size: 1.8rem; /* Slightly smaller */
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.5;
+}
+
+/* Smaller hero image circle */
+.hero-image .circle {
+  width: 240px; /* Smaller */
+  height: 240px; /* Smaller */
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25); /* More transparent for brightness */
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image img {
+  width: 200px; /* Smaller */
+  height: 200px; /* Smaller */
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+}
+
+/* Dark mode adjustments for hero */
+[data-theme="dark"] .hero::after {
+  background: rgba(0, 0, 0, 0.4); /* Slightly darker in dark mode */
+}
+
+/* ===== SECTIONS ===== */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+  scroll-margin-top: 80px; /* ADD THIS LINE - for desktop */
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 120px; /* ADD THIS LINE - for mobile (adjust if needed) */
+  }
+}
+
+h3 {
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
+  background: var(--nav-bg);
+  margin-top: 40px;
+}
+
+/* ===== MODERN THEME BUTTON ===== */
+.theme-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: #020617;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(34, 211, 238, 1.35);
+}
+
+[data-theme="dark"] .theme-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: #ffffff;   /* WHITE TEXT */
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Fixed: was "eas" */
+}
+
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+[data-theme="dark"] section {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* ===== LOGO ===== */
+.logo {
+  position: relative;
+  height: 0;          /* ⬅ prevents navbar from growing */
+  width: 0;
+}
+
+
+.logo img {
+  width: 250px; /* Your desired width */
+  height: 100px; /* Your desired height */
+  object-fit: contain;
+  position: absolute; /* Position it absolutely */
+  left: 70; /* Adjust to center horizontally */
+  top: -50px; /* Adjust to move it up (negative value) */
+}
+/* ===== DARK MODE LOGO BACKGROUND (NO LAYOUT IMPACT) ===== */
+[data-theme="dark"] .logo::before {
+  content: "";
+  position: absolute;
+
+  /* Match logo visual area */
+  width: 300px;
+  height: 70px;
+
+  inset: -35px -26px;  
+
+  background: #ffffff;
+
+  clip-path: polygon(
+    10% 0%,
+    96% 0%,
+    90% 100%,
+    4% 100%
+  );
+
+  z-index: 0;
+  pointer-events: none; /* safety */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .logo img {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== DOWNLOAD CV BUTTON ===== */
+
+.cv-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: #020617;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-shadow: none;
+  z-index: 4;
+  position: relative;
+}
+
+.cv-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
+}
+
+ [data-theme="dark"] .cv-btn {
+  border-radius: 30px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: white;
+ }
+ 
+/* ===== FADE-IN ANIMATION ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BACK TO TOP BUTTON */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #020617;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+  
+  /* ADD THESE LINES TO MAKE IT FRONTEND */
+  z-index: 9999; /* Higher than everything else */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow to make it stand out */
+  pointer-events: auto; /* Ensure it's always clickable */
+}
+
+/* Show button */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dark mode tweak */
+[data-theme="dark"] .back-to-top {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6);
+}
+
+.back-to-top .arrow {
+  font-size: 3rem;   /* BIG arrow */
+  line-height: 1;
+  color: #FFFFFF;
+}
+
+.back-to-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
+}
+
+.back-to-top .arrow {
+  font-size: 3rem;   /* BIG arrow */
+  line-height: 1;
+  color: #FFFFFF;
+}
+.back-to-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
+}
+
+/* ===============================
+   MOBILE NAVBAR ONLY (PC UNCHANGED)
+   =============================== */
+@media (max-width: 768px) {
+  /* Keep navbar at top */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    padding: 12px 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    align-items: center;
+  }
+  
+/* ===== LOGO ===== */
+.logo {
+  position: relative;
+  height: 0;          /* ⬅ prevents navbar from growing */
+  width: 0;
+}
+
+
+.logo img {
+  width: 150px; /* Your desired width */
+  height: 100px; /* Your desired height */
+  object-fit: contain;
+  position: absolute; /* Position it absolutely */
+  left: 70; /* Adjust to center horizontally */
+  top: -50px; /* Adjust to move it up (negative value) */
+}
+/* ===== DARK MODE LOGO BACKGROUND (NO LAYOUT IMPACT) ===== */
+[data-theme="dark"] .logo::before {
+  content: "";
+  position: absolute;
+
+  /* Match logo visual area */
+  width: 185px;
+  height: 50px;
+
+  inset: -26px -15px;  
+
+  background: #ffffff;
+
+  clip-path: polygon(
+    10% 0%,
+    96% 0%,
+    90% 100%,
+    4% 100%
+  );
+
+  z-index: 0;
+  pointer-events: none; /* safety */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .logo img {
+  position: relative;
+  z-index: 1;
+}
+  
+  /* Theme button in top-right */
+  .theme-container {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  
+  /* Hide text in theme button on mobile */
+  .theme-btn .text {
+    display: none;
+  }
+  
+  .theme-btn .icon {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  /* Navigation buttons take full width in second row */
+  .navbar > ul {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+  }
+  
+  /* Style all navigation buttons */
+  .navbar ul a {
+    white-space: nowrap;
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+    color: #020617;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  /* Dark mode for navigation buttons */
+  [data-theme="dark"] .navbar ul a {
+    color: #ffffff;
+  }
+  
+  /* Hover effect */
+  .navbar ul a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(34, 211, 238, 0.4);
+  }
+  
+  /* Make "Let's Talk" button stand out if needed */
+  .talk-btn {
+    /* Add any special styling for this button on mobile if desired */
+  }
+  
+  /* Adjust hero section for mobile - smaller */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+    min-height: 300px; /* Smaller for mobile */
+  }
+  
+  .hero-text {
+    margin-bottom: 30px;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 1.3rem;
+  }
+  
+  .hero-image .circle {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .hero-image img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  /* Ensure background image covers properly on mobile */
+  .hero::before {
+    background-attachment: scroll;
+  }
+  
+  /* Fix grid for mobile */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  /* Fix Back to Top button for mobile/iOS */
+  /* Ensure back-to-top button stays in front on mobile */
+  .back-to-top {
+    z-index: 9999; /* Ensure it's above mobile navbar and everything */
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+  }
+  
+  /* Optional: Make it slightly larger on mobile for better touch */
+  .back-to-top {
+    width: 52px;
+    height: 52px;
+  }
+  
+  /* Contact section adjustments for mobile */
+  #contacts .card {
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  
+  #contacts .grid {
+    gap: 10px;
+  }
+}
+
+/* ===== CONTACT SECTION BACKGROUND ===== */
+#contacts {
+  background: url('DigitalMap.PNG') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  width: 100%; /* Make it full width */
+  max-width: none; /* Remove max-width constraint */
+  padding: 30px 0; /* Keep vertical padding, remove horizontal */
+  margin: 0; /* Remove auto margin */
+}
+
+/* Center the content within the full-width section */
+#contacts > .grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#contacts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#contacts > * {
+  position: relative;
+  z-index: 2;
+}
+
+#contacts h3 {
+  color: white;
+  border-bottom-color: #22d3ee; /* Change accent color to match theme */
+}
+
+#contacts a {
+  color: #22d3ee;
+  text-decoration: none;
+}
+
+#contacts a:hover {
+  text-decoration: underline;
+}
+
+/* Ensure cards in contact section have transparent background */
+#contacts .card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* services card styling */
+#services .card {
+  background: var(--card-bg);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: var(--text-main);
+}
+
+/* Dark mode override for services cards */
+[data-theme="dark"] #services .card {
+  background: var(--card-bg);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* H4 styling */
+h4 {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Dark mode override for h4 */
+[data-theme="dark"] h4 {
+  color: white;
+}
+
+/* Dark mode override for h4 */
+[data-theme="dark"] p {
+  color: white;
+}
+
+/* Additional mobile adjustments for extra small screens */
+@media (max-width: 480px) {
+  .hero {
+    padding: 25px 15px;
+    min-height: 280px;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 1.2rem;
+  }
+  
+  .hero-image .circle {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .hero-image img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  /* Adjust overlay for smaller screens */
+  .hero::after {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Make hero image even brighter on small screens */
+  .hero::before {
+    filter: brightness(1.3);
+  }
+}
