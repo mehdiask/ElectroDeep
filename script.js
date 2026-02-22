@@ -109,14 +109,13 @@ form.addEventListener('submit', async (e) => {
   submitBtn.textContent = 'Sending...';
   
   try {
+	  
     // ===== REPLACE WITH YOUR ACTUAL FORM ENDPOINT =====
-    // Example using Formspree:
-    // const response = await fetch('https://formspree.io/f/your-form-id', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(data)
-    // });
-    
+	const response = await fetch('https://getform.io/f/your-unique-id', {
+	method: 'POST',
+	headers: { 'Content-Type': 'application/json' },
+	body: JSON.stringify(data)
+	});
     // For demo, we'll simulate a successful submission
     await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate network delay
     
