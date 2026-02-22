@@ -11,11 +11,6 @@
 
 </head>
 
-<!-- ===== BACK TO TOP BUTTON ===== -->
-<button id="backToTop" class="back-to-top" aria-label="Back to top">
-  <span class="arrow">⬆</span>
-</button>
-
 <body>
 
 <!-- ===== NAVBAR ===== -->
@@ -54,9 +49,10 @@
 			<p>We help hardware companies develop custom bootloaders, embedded firmware, and desktop software flashing tools for IoT systems, 
 			   medical devices and electronic equipment, ensuring reliability, security, and performance.
 			</p>
-			<!--<a href="CV-Mehdi_Askri.pdf" download class="cv-btn">
-				📄 Download CV
-			</a>-->
+			
+			<a href="#contacts" class="contactus-btn">
+				Contact us to discuss your R&D projects
+			</a>
   </div>
   
   <div class="hero-image">
@@ -166,6 +162,61 @@
 <footer>
   ElectroDeep | All rights reserved © 2026
 </footer>
+
+<!-- ===== BACK TO TOP BUTTON ===== -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+  <span class="arrow">⬆</span>
+</button>
+
+<!-- ===== CONTACT MODAL ===== -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Contact us to discuss your R&D projects</h2>
+    
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="fullname">FULL NAME <span class="required">*</span></label>
+        <input type="text" id="fullname" name="fullname" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="company">COMPANY <span class="required">*</span></label>
+        <input type="text" id="company" name="company" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">PHONE NUMBER <span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">E-MAIL <span class="required">*</label>
+        <input type="email" id="email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="subject">SUBJECT <span class="required">*</label>
+        <input type="text" id="subject" name="subject">
+      </div>
+      <div class="form-group">
+		<label for="comments">COMMENTS<span class="required">*</label>
+		<textarea id="comments" name="comments" rows="4" placeholder="Tell us about your project..."></textarea>
+	  </div>
+      <p class="privacy-note">
+        By clicking SUBMIT, I agree to the terms of ElectroDeep Engineering Services, LLC’s privacy policy.
+      </p>
+      
+      <div class="recaptcha-note">
+        <span>protected by reCAPTCHA</span>
+        <a href="#">Privacy</a> - <a href="#">Terms</a>
+      </div>
+      
+      <button type="submit" class="submit-btn">SUBMIT</button>
+    </form>
+    
+    <div id="formStatus" class="form-status"></div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

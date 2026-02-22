@@ -438,11 +438,14 @@ section {
   z-index: 1;
 }
 
-/* ===== DOWNLOAD CV BUTTON ===== */
+/* ===== contact us BUTTON ===== */
 
-.cv-btn {
+.contactus-btn {
   display: inline-block;
   padding: 12px 22px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   border-radius: 30px;
   background: linear-gradient(135deg, #0ea5a4, #22d3ee);
   color: #020617;
@@ -455,18 +458,26 @@ section {
   position: relative;
 }
 
-.cv-btn:hover {
+.contactus-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
 }
 
- [data-theme="dark"] .cv-btn {
+ [data-theme="dark"] .contactus-btn {
   border-radius: 30px;
   text-decoration: none;
   background: linear-gradient(135deg, #0ea5a4, #22d3ee);
   color: white;
  }
  
+ .hero-text .contactus-btn {
+    display: block;
+    width: fit-content;    /* Shrinks the button to fit its content */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;    /* Ensures the text inside is centered */
+}
+
 /* ===== FADE-IN ANIMATION ===== */
 .fade-in {
   opacity: 0;
@@ -878,5 +889,179 @@ h4 {
   /* Make hero image even brighter on small screens */
   .hero::before {
     filter: brightness(1.3);
+  }
+}
+
+/* ===== CONTACT MODAL ===== */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 10000; /* Above everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: var(--card-bg);
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  position: relative;
+  color: var(--text-main);
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
+
+.close-modal:hover {
+  color: var(--accent);
+}
+
+.modal-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: var(--page-bg);
+  color: var(--text-main);
+  transition: border 0.3s;
+}
+
+.form-group input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.required {
+  color: #e74c3c;
+}
+
+.privacy-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+}
+
+.recaptcha-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.recaptcha-note a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.recaptcha-note a:hover {
+  text-decoration: underline;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0ea5a4, #22d3ee);
+  color: #020617;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(34, 211, 238, 0.5);
+}
+
+[data-theme="dark"] .submit-btn {
+  color: white;
+}
+
+.form-status {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .modal-content {
+  background: var(--card-bg);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .form-group input {
+  background: #2d3448;
+  border-color: #4a5568;
+  color: white;
+}
+
+/* Fixed dimensions for form fields as requested */
+.modal-content .form-group input,
+.modal-content .form-group textarea {
+  width: 12.5cm;
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+.modal-content .form-group input {
+  height: 1cm;
+}
+
+.modal-content .form-group textarea {
+  height: 3.5cm;
+  resize: vertical; /* Still allows vertical resizing, but height starts at 3.5cm */
+}
+
+/* Adjust the modal content width to fit the fields comfortably */
+.modal-content {
+  max-width: 800px;   /* Allows enough space for 12.5cm fields (~12.5cm ≈ 4.92in ≈ 472px) */
+  width: auto;         /* Override the previous 90% width to use the fixed field widths */
+  display: inline-block; /* Shrink-wrap the content */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* On small screens, revert to flexible width to avoid horizontal scroll */
+@media (max-width: 600px) {
+  .modal-content .form-group input,
+  .modal-content .form-group textarea {
+    width: 100%;       /* Full width on mobile */
+    max-width: 12.5cm; /* But not larger than 12.5cm */
   }
 }
