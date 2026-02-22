@@ -298,6 +298,14 @@ h3 {
   border-bottom: 3px solid var(--accent);
   display: inline-block;
   margin-bottom: 20px;
+  text-align: center;
+}
+
+section h3 {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .grid {
