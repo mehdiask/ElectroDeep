@@ -111,18 +111,21 @@ form.addEventListener('submit', async (e) => {
   try {
 	  
     // ===== REPLACE WITH YOUR ACTUAL FORM ENDPOINT =====
-	const response = await fetch('https://getform.io/f/your-unique-id', {
+	const response = await fetch('https://formspree.io/f/mqedgkzk', {
 	method: 'POST',
 	headers: { 'Content-Type': 'application/json' },
 	body: JSON.stringify(data)
 	});
-    // For demo, we'll simulate a successful submission
-    await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate network delay
-    
-    // Show success message
-    formStatus.textContent = 'Thank you! Your message has been sent.';
-    formStatus.style.color = '#2ecc71';
-    form.reset(); // Clear the form
+	
+	if (!response.ok) {
+	throw new Error('Submission failed');
+	}
+	else{
+		// Show success message
+		formStatus.textContent = 'Thank you! Your message has been sent.';
+		formStatus.style.color = '#2ecc71';
+		form.reset(); // Clear the form
+	}
     
     // Close modal after 2 seconds (optional)
     setTimeout(() => {
