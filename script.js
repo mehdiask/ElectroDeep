@@ -97,7 +97,7 @@ form.addEventListener('submit', async (e) => {
   const data = Object.fromEntries(formData.entries());
   
   // Simple validation (HTML5 required handles most, but we double-check)
-  if (!data.firstname || !data.lastname || !data.email) {
+  if (!data.fullname || !data.company || !data.phone || !data.email || !data.subject || !data.comments) {
     formStatus.textContent = 'Please fill all required fields.';
     formStatus.style.color = '#e74c3c';
     return;
