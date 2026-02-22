@@ -378,6 +378,7 @@ section {
   position: relative;
   height: 0;          /* ⬅ prevents navbar from growing */
   width: 0;
+  background: transparent;
 }
 
 
@@ -390,15 +391,34 @@ section {
   top: -50px; /* Adjust to move it up (negative value) */
 }
 /* ===== DARK MODE LOGO BACKGROUND (NO LAYOUT IMPACT) ===== */
-[data-theme="dark"] .logo::before {
+.logo::before {
   content: "";
   position: absolute;
 
-  /* Match logo visual area */
+  width: 301.5px;      /* only +2px total */
+  height: 71px;
+  inset: -35.1px -26.8px;
+
+  background: #1E2A4A;
+
+  clip-path: polygon(
+    10% 0%,
+    96% 0%,
+    90% 100%,
+    4% 100%
+  );
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+
   width: 300px;
   height: 70px;
-
-  inset: -35px -26px;  
+  inset: -35px -26px;
 
   background: #ffffff;
 
@@ -410,11 +430,10 @@ section {
   );
 
   z-index: 0;
-  pointer-events: none; /* safety */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
 }
 
-[data-theme="dark"] .logo img {
+.logo img {
   position: relative;
   z-index: 1;
 }
@@ -546,6 +565,7 @@ section {
   position: relative;
   height: 0;          /* ⬅ prevents navbar from growing */
   width: 0;
+  background: transparent;
 }
 
 
@@ -558,7 +578,30 @@ section {
   top: -50px; /* Adjust to move it up (negative value) */
 }
 /* ===== DARK MODE LOGO BACKGROUND (NO LAYOUT IMPACT) ===== */
-[data-theme="dark"] .logo::before {
+.logo::before {
+  content: "";
+  position: absolute;
+
+  /* Match logo visual area */
+  width: 186.7px;
+  height: 51.2px;
+
+  inset: -26.6px -15.7px;  
+
+  background: #1E2A4A;
+
+  clip-path: polygon(
+    10% 0%,
+    96% 0%,
+    90% 100%,
+    4% 100%
+  );
+
+  z-index: 0;
+  pointer-events: none; /* safety */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+.logo::after {
   content: "";
   position: absolute;
 
@@ -581,8 +624,7 @@ section {
   pointer-events: none; /* safety */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
-
-[data-theme="dark"] .logo img {
+.logo img {
   position: relative;
   z-index: 1;
 }
