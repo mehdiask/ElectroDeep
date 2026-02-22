@@ -189,7 +189,7 @@ body {
   height: 100%;
   background: 
     linear-gradient(rgba(50, 50, 50, 0.2), rgba(50, 50, 50, 0.1)), /* Light overlay for brightness */
-    url('ectronique.jpg') no-repeat center center;
+    url('images/ectronique.jpg') no-repeat center center;
   background-size: cover;
   filter: brightness(1.2); /* Increase brightness */
   z-index: 1;
@@ -759,7 +759,7 @@ section {
 
 /* ===== CONTACT SECTION BACKGROUND ===== */
 #contacts {
-  background: url('DigitalMap.PNG') no-repeat center center;
+  background: url('images/DigitalMap.PNG') no-repeat center center;
   background-size: cover;
   position: relative;
   color: white;
