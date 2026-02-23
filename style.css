@@ -282,7 +282,7 @@ body {
 
 /* ===== SECTIONS ===== */
 section {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
   padding: 60px 20px;
   scroll-margin-top: 80px; /* ADD THIS LINE - for desktop */
@@ -369,12 +369,6 @@ footer {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease; /* Fixed: was "eas" */
-}
-
-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 60px 20px;
 }
 
 [data-theme="dark"] section {
