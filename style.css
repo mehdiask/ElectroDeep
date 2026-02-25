@@ -328,6 +328,24 @@ section h3 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
+.card-img {
+  width: 100%;               /* Makes image fill the card width */
+  height: 150px;              /* Fixed height – adjust as needed */
+  object-fit: cover;          /* Crops image to fit the box without distortion */
+  border-radius: 8px;         /* Optional: rounded corners */
+  margin-bottom: 15px;        /* Space between image and heading */
+  display: block;
+}
+
+/* Optional: if you want the image to be a circle or smaller */
+.card-img.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 15px;        /* Center the circle image */
+  object-fit: cover;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
