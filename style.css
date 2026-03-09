@@ -304,8 +304,26 @@ h3 {
 section h3 {
   text-align: center;
   display: block;
+  margin: 0 auto 25px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  padding-bottom: 12px;
+  position: relative;
+  border-bottom: 3px solid var(--accent);
   margin-left: auto;
   margin-right: auto;
+}
+
+section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background: var(--accent);
 }
 
 .grid {
